@@ -90,3 +90,8 @@ variable "ssh_port" {
   default     = "22"
   description = "Inbound ssh port"
 }
+
+variable "elb_idle_timeout" {
+  default     = "600"
+  description = "The time in seconds that the connection is allowed to be idle. Default: 600"
+}

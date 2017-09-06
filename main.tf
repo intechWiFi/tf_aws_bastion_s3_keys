@@ -164,4 +164,6 @@ resource "aws_elb" "bastion" {
   security_groups = [
     "${compact(concat(list(aws_security_group.elb.id), split(",", "${var.security_group_ids}")))}",
   ]
+
+  idle_timeout = "${var.elb_idle_timeout}"
 }

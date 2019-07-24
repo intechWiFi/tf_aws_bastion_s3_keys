@@ -151,7 +151,7 @@ resource "aws_elb" "bastion" {
   name = "${var.name}"
 
   subnets = [
-    "${var.subnet_ids}",
+    "${var.elb_subnet_ids}",
   ]
 
   listener {

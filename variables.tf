@@ -16,6 +16,12 @@ variable "allowed_security_groups" {
   description = "A list of Security Group ID's to allow access to."
 }
 
+
+variable "elb_subnet_ids" {
+  description = "The subnets in which the ELB will be placed (used for security group)"
+  type        = "list"
+}
+
 variable "name" {
   default = "bastion"
 }

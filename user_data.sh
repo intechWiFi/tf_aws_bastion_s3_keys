@@ -86,3 +86,7 @@ fi
 
 # Append addition user-data script
 ${additional_user_data_script}
+
+# Ammend SSH Server config
+sed -i '/ClientAliveInterval/c\ClientAliveInterval 120' /etc/ssh/sshd_config
+service sshd restart

@@ -1,44 +1,46 @@
 variable "allowed_cidr" {
-  type        = "list"
+  type        = list(string)
   default     = ["0.0.0.0/0"]
   description = "A list of CIDR Networks to allow ssh access to."
 }
 
 variable "allowed_ipv6_cidr" {
-  type        = "list"
+  type        = list(string)
   default     = ["::/0"]
   description = "A list of IPv6 CIDR Networks to allow ssh access to."
 }
 
 variable "allowed_security_groups" {
-  type        = "list"
+  type        = list(string)
   default     = []
   description = "A list of Security Group ID's to allow access to."
 }
 
-
 variable "elb_subnet_ids" {
   description = "The subnets in which the ELB will be placed (used for security group)"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "name" {
   default = "bastion"
 }
 
-variable "ami" {}
+variable "ami" {
+}
 
 variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "iam_instance_profile" {}
+variable "iam_instance_profile" {
+}
 
 variable "user_data_file" {
   default = "user_data.sh"
 }
 
-variable "s3_bucket_name" {}
+variable "s3_bucket_name" {
+}
 
 variable "s3_bucket_uri" {
   default = ""
@@ -68,7 +70,8 @@ variable "region" {
   default = "eu-west-1"
 }
 
-variable "vpc_id" {}
+variable "vpc_id" {
+}
 
 variable "security_group_ids" {
   description = "Comma seperated list of security groups to apply to the bastion."
@@ -101,3 +104,4 @@ variable "elb_idle_timeout" {
   default     = "600"
   description = "The time in seconds that the connection is allowed to be idle. Default: 600"
 }
+
